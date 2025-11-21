@@ -7,3 +7,5 @@ description = "Collection of solutions to various Codewars problems"
 license = "MIT"
 
 [dependencies]
+md5 = "0.8.0"
+rayon = "1.11.0"

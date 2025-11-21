@@ -6,7 +6,7 @@
 
 pub fn longest_consec(strarr: Vec<&str>, k: usize) -> String {
     let n = strarr.len();
-    if n == 0 || k > n || k <= 0 {
+    if n == 0 || n < k || k == 0 {
         return String::new();
     }
 

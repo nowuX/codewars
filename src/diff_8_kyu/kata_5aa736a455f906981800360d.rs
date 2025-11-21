@@ -20,8 +20,8 @@ mod tests {
 
     #[test]
     fn sample_test_cases() {
-        assert_eq!(feast("great blue heron", "garlic naan"), true);
-        assert_eq!(feast("chickadee", "chocolate cake"), true);
-        assert_eq!(feast("brown bear", "bear claw"), false);
+        assert!(feast("great blue heron", "garlic naan"));
+        assert!(feast("chickadee", "chocolate cake"));
+        assert!(!feast("brown bear", "bear claw"));
     }
 }

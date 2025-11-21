@@ -3,7 +3,7 @@
 
 pub fn likes(names: &[&str]) -> String {
     match names.len() {
-        0 => format!("no one likes this"),
+        0 => "no one likes this".to_string(),
         1 => format!("{} likes this", names[0]),
         2 => format!("{} and {} like this", names[0], names[1]),
         3 => format!("{}, {} and {} like this", names[0], names[1], names[2]),
