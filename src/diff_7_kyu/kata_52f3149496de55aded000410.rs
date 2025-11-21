@@ -4,11 +4,9 @@
 //!
 //! For example: (**Input** --> **Output**)
 //!
-//! ```
 //! 10 --> 1
 //! 9 --> 18
 //! -32 --> 5
-//! ```
 //!
 //! Let's assume that all numbers in the input will be integer values.
 
