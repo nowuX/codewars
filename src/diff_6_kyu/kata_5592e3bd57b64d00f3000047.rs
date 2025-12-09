@@ -14,12 +14,8 @@ pub fn find_nb(m: u64) -> i32 {
     let mut vol_acc = 0;
     for n in 1_u64.. {
         vol_acc += n.pow(3);
-        if vol_acc == m {
-            return n as i32;
-        }
-
-        if vol_acc > m {
-            break;
+        if vol_acc >= m {
+            return if vol_acc == m { n as i32 } else { -1 };
         }
     }
     -1

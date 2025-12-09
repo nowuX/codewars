@@ -11,15 +11,17 @@
 //! Let's assume that all numbers in the input will be integer values.
 
 pub fn sum_digits(number: i32) -> i32 {
-    if number < 0 {
-        return sum_digits(-number);
+    let mut number = number.abs();
+    if number == 0 {
+        return 0;
     }
 
-    if number < 10 {
-        return number;
+    let mut acc = 0;
+    while number > 0 {
+        acc += number % 10;
+        number /= 10;
     }
-
-    number % 10 + sum_digits(number / 10)
+    acc
 }
 
 #[cfg(test)]
@@ -27,38 +29,22 @@ mod sample_tests {
     use super::sum_digits;
 
     #[test]
+    fn test_sum_0() {
+        assert_eq!(sum_digits(0), 0);
+    }
+
+    #[test]
     fn test_sum_digits_10() {
-        let n = 10;
-        let expected = 1;
-        let actual = sum_digits(n);
-        assert_eq!(
-            actual, expected,
-            "\nsum_digits({}) should be {}, got {}",
-            n, expected, actual
-        );
+        assert_eq!(sum_digits(10), 1);
     }
 
     #[test]
     fn test_sum_digits_99() {
-        let n = 99;
-        let expected = 18;
-        let actual = sum_digits(n);
-        assert_eq!(
-            actual, expected,
-            "\nsum_digits({}) should be {}, got {}",
-            n, expected, actual
-        );
+        assert_eq!(sum_digits(99), 18);
     }
 
     #[test]
     fn test_sum_digits_neg_32() {
-        let n = -32;
-        let expected = 5;
-        let actual = sum_digits(n);
-        assert_eq!(
-            actual, expected,
-            "\nsum_digits({}) should be {}, got {}",
-            n, expected, actual
-        );
+        assert_eq!(sum_digits(-32), 5);
     }
 }

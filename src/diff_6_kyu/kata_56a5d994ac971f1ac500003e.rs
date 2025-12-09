@@ -27,7 +27,15 @@ pub fn longest_consec(strarr: Vec<&str>, k: usize) -> String {
 
 #[cfg(test)]
 mod tests {
-    use super::*;
+    use super::longest_consec;
+
+    #[test]
+    fn edge_cases() {
+        assert_eq!(longest_consec(vec![], 1), "");
+        assert_eq!(longest_consec(vec!["a", "b"], 0), "");
+        assert_eq!(longest_consec(vec!["a", "b"], 3), "");
+        assert_eq!(longest_consec(vec!["aa", "bb", "cc", "dd"], 2), "aabb");
+    }
 
     #[test]
     fn basics_longest_consec() {

@@ -27,14 +27,15 @@ pub fn crack_paralel(hash: &str) -> String {
 
 #[cfg(test)]
 mod tests {
-    use super::*;
+    use crate::diff_6_kyu::kata_5efae11e2d12df00331f91a6::crack_paralel;
+
+    use super::crack;
 
     #[test]
-    fn easy_pin() {
-        assert_eq!(crack("827ccb0eea8a706c4c34a16891f84e7b"), "12345");
-    }
-    #[test]
-    fn harder_pin() {
-        assert_eq!(crack("86aa400b65433b608a9db30070ec60cd"), "00078");
+    fn sample_tests() {
+        for f in [crack, crack_paralel] {
+            assert_eq!(f("827ccb0eea8a706c4c34a16891f84e7b"), "12345");
+            assert_eq!(f("86aa400b65433b608a9db30070ec60cd"), "00078");
+        }
     }
 }

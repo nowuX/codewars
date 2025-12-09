@@ -28,6 +28,22 @@ mod tests {
     use super::*;
 
     #[test]
+    fn edge_cases() {
+        assert_eq!(
+            is_valid_walk(&['n', 's', 's', 'e', 'w', 'n', 's', 's', 'e', 'w']),
+            false
+        );
+        assert_eq!(
+            is_valid_walk(&['n', 'n', 'w', 'w', 's', 's', 'e', 'e', 'n', 's']),
+            true
+        );
+        assert_eq!(
+            is_valid_walk(&['n', 'n', 'w', 'w', 's', 's', 'w', 'w', 'n', 's']),
+            false
+        );
+    }
+
+    #[test]
     fn sample_tests() {
         assert!(is_valid_walk(&[
             'n', 's', 'n', 's', 'n', 's', 'n', 's', 'n', 's'
