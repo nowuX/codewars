@@ -1,0 +1,9 @@
+pub mod kata_513e08acc600c94f01000001;
+pub mod kata_52449b062fb80683ec000024;
+pub mod kata_52597aa56021e91c93000cb0;
+pub mod kata_525c65e51bf619685c000059;
+pub mod kata_52685f7382004e774f0001f7;
+pub mod kata_52a89c2ea8ddc5547a000863;
+pub mod kata_530e15517bc88ac656000716;
+pub mod kata_54521e9ec8e60bc4de000d6c;
+pub mod kata_550f22f4d758534c1100025a;
