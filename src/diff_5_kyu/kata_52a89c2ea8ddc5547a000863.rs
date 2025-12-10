@@ -1,20 +1,17 @@
 #![expect(unused)]
 
-struct Node {
+#[derive(Default)]
+pub struct Node {
     next_node: Option<Box<Node>>,
 }
 
 impl Node {
-    pub fn new() -> Self {
-        Node { next_node: None }
-    }
-
     pub fn next(&self) -> Option<&Self> {
         self.next_node.as_deref()
     }
 }
 
-fn loop_size(node: Node) -> usize {
+pub fn loop_size(node: Node) -> usize {
     todo!("Your code here!")
 }
 
